@@ -1,0 +1,1272 @@
+/* ==========================================================================
+   UAMC.LV - DINAMISKS INDUSTRIĀLAIS BŪVNIECĪBAS STILS
+   Bold, Raw Industrial, Heavy Typography, High-Impact
+   ========================================================================== */
+
+:root {
+  /* Industrial Palette */
+  --c-dark-bg: #0c0d10;
+  --c-dark-surface: #14161b;
+  --c-dark-elevated: #1b1e26;
+  --c-dark-border: rgba(255, 255, 255, 0.12);
+  
+  /* Industrial Safety Yellow & High-Visibility Accents */
+  --c-yellow: #ffe500;
+  --c-yellow-hover: #ffd000;
+  --c-yellow-dim: rgba(255, 229, 0, 0.12);
+  --c-orange: #ff5500;
+  --c-concrete: #8c929e;
+  
+  /* Clean White & Metal */
+  --c-text-white: #ffffff;
+  --c-text-muted: #9aa1ad;
+  --c-text-dark: #0c0d10;
+  
+  /* Fonts */
+  --font-display: 'Barlow Condensed', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  
+  /* Layout */
+  --container-width: 1320px;
+  --grid-gap: 2rem;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--c-dark-bg);
+  color: var(--c-text-white);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--c-dark-bg);
+  color: var(--c-text-white);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Industrial Grid Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* ==========================================================================
+   TOP MARQUEE RUNNING TICKER
+   ========================================================================== */
+.marquee-bar {
+  background-color: var(--c-yellow);
+  color: var(--c-text-dark);
+  padding: 0.55rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #000;
+  position: relative;
+  z-index: 60;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+  gap: 3rem;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.marquee-item::after {
+  content: '■';
+  font-size: 0.7rem;
+  color: var(--c-text-dark);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(12, 13, 16, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--c-dark-border);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 82px;
+}
+
+/* Industrial Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-badge {
+  background-color: var(--c-yellow);
+  color: var(--c-text-dark);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0.4rem 0.75rem;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  display: inline-block;
+  letter-spacing: -0.5px;
+}
+
+.logo-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--c-yellow);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* Navigation Links */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--c-text-muted);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--c-yellow);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-phone {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.nav-phone-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--c-text-muted);
+}
+
+.nav-phone-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--c-text-white);
+  letter-spacing: 0.5px;
+}
+
+.nav-phone-num:hover {
+  color: var(--c-yellow);
+}
+
+/* Industrial Buttons */
+.btn-ind {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ind-primary {
+  background-color: var(--c-yellow);
+  color: var(--c-text-dark);
+}
+
+.btn-ind-primary:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 229, 0, 0.35);
+}
+
+.btn-ind-outline {
+  background-color: transparent;
+  color: var(--c-text-white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-ind-outline:hover {
+  border-color: var(--c-yellow);
+  color: var(--c-yellow);
+  transform: translateY(-2px);
+}
+
+.btn-ind-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+}
+
+.btn-ind-whatsapp:hover {
+  background-color: #22bf5b;
+  transform: translateY(-2px);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--c-text-white);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO SECTION - HEAVY INDUSTRIAL EDITORIAL
+   ========================================================================== */
+.hero-industrial {
+  position: relative;
+  padding: 5rem 0 6rem;
+  border-bottom: 2px solid var(--c-dark-border);
+  overflow: hidden;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--c-dark-surface);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.45rem 1rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--c-yellow);
+  margin-bottom: 1.75rem;
+}
+
+.hero-title-giant {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.75rem;
+}
+
+.hero-title-giant span.highlight {
+  color: var(--c-yellow);
+  display: inline-block;
+}
+
+.hero-title-giant span.outline {
+  -webkit-text-stroke: 2px #ffffff;
+  color: transparent;
+}
+
+.hero-lead-text {
+  font-size: 1.15rem;
+  color: var(--c-text-muted);
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-button-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Raw Metric Strip */
+.hero-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--c-yellow);
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 0.35rem;
+}
+
+/* Hero Visual Showcase */
+.hero-visual-frame {
+  position: relative;
+}
+
+.hero-visual-frame::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--c-yellow);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-main-photo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  filter: contrast(1.08) brightness(0.96);
+}
+
+.hero-live-tape {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  z-index: 2;
+  background-color: #000;
+  border: 1px solid var(--c-yellow);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pulse-red-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ff3b30;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff3b30;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(255, 59, 48, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+.live-tape-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   SECTION COMMON - INDUSTRIAL HEADINGS
+   ========================================================================== */
+.section-ind {
+  padding: 6rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--c-dark-border);
+}
+
+.section-head-ind {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.section-eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--c-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.section-title-giant {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.section-desc-right {
+  max-width: 420px;
+  color: var(--c-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SERVICES - HEAVY INDUSTRIAL ROW LIST (NO ADMIN CARDS)
+   ========================================================================== */
+.services-industrial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.service-row-item {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background-color: var(--c-dark-surface);
+  border-left: 6px solid var(--c-yellow);
+  padding: 2.5rem 3rem;
+  transition: all 0.3s ease;
+}
+
+.service-row-item:hover {
+  background-color: var(--c-dark-elevated);
+  transform: translateX(8px);
+}
+
+.service-num-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-giant-num {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.service-tag-badge {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-yellow);
+  margin-top: 0.5rem;
+}
+
+.service-info-col h3 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.service-info-col p {
+  color: var(--c-text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.service-features-list li {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--c-text-white);
+}
+
+.service-features-list li::before {
+  content: '▸';
+  color: var(--c-yellow);
+  font-weight: bold;
+}
+
+.service-visual-col {
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-visual-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-row-item:hover .service-visual-col img {
+  transform: scale(1.06);
+}
+
+/* ==========================================================================
+   TIKTOK & REAL CONSTRUCTION SPOTLIGHT
+   ========================================================================== */
+.tiktok-industrial-panel {
+  background-color: #000;
+  border: 2px solid var(--c-yellow);
+  padding: 4rem;
+  position: relative;
+}
+
+.tiktok-layout-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.tiktok-heading-tag {
+  display: inline-block;
+  background-color: #ff0050;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.tiktok-lead-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.tiktok-quote-box {
+  border-left: 4px solid var(--c-yellow);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--c-text-muted);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.tiktok-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  background-color: var(--c-dark-surface);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tiktok-metric-val {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--c-yellow);
+  line-height: 1;
+}
+
+.tiktok-metric-sub {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* TikTok Preview Reel Mockup */
+.tiktok-phone-mockup {
+  background: var(--c-dark-surface);
+  border: 4px solid #27272a;
+  border-radius: 36px;
+  padding: 14px;
+  max-width: 380px;
+  margin: 0 auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.phone-screen {
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.phone-overlay-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 1.25rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, transparent 100%);
+}
+
+.phone-user-tag {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--c-yellow);
+}
+
+.phone-caption {
+  font-size: 0.85rem;
+  color: #fff;
+  margin-top: 0.3rem;
+}
+
+/* ==========================================================================
+   PORTFOLIO - FULL BLEED SHARP GRID
+   ========================================================================== */
+.portfolio-filter-ind {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn-ind {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--c-text-white);
+  padding: 0.6rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn-ind:hover, .filter-btn-ind.active {
+  background-color: var(--c-yellow);
+  color: var(--c-text-dark);
+  border-color: var(--c-yellow);
+}
+
+.portfolio-grid-ind {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.portfolio-block {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portfolio-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-block:hover img {
+  transform: scale(1.08);
+}
+
+.portfolio-block-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.85) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-block:hover .portfolio-block-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-loc-tag {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--c-yellow);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.portfolio-title-text {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-top: 0.3rem;
+}
+
+/* ==========================================================================
+   CONFIGURATOR / TĀMES CALCULATOR - INDUSTRIAL STYLE
+   ========================================================================== */
+.calc-industrial-box {
+  background-color: var(--c-dark-surface);
+  border: 2px solid var(--c-dark-border);
+  padding: 3.5rem;
+  position: relative;
+}
+
+.calc-industrial-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.calc-step-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--c-text-white);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.calc-step-title span {
+  color: var(--c-yellow);
+}
+
+.calc-segmented-control {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.calc-segment-item input {
+  display: none;
+}
+
+.calc-segment-label {
+  display: block;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background-color: var(--c-dark-bg);
+  border: 2px solid var(--c-dark-border);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.calc-segment-item input:checked + .calc-segment-label {
+  background-color: var(--c-yellow);
+  color: var(--c-text-dark);
+  border-color: var(--c-yellow);
+}
+
+.slider-digital-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.digital-value {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--c-yellow);
+  line-height: 1;
+}
+
+.range-slider-industrial {
+  width: 100%;
+  height: 10px;
+  background: #27272a;
+  outline: none;
+  -webkit-appearance: none;
+  accent-color: var(--c-yellow);
+  border-radius: 0;
+}
+
+/* Digital Readout Screen */
+.calc-readout-screen {
+  background-color: #000;
+  border: 2px solid var(--c-yellow);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.readout-tag {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+.readout-price {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--c-yellow);
+  line-height: 1.1;
+  margin: 1rem 0;
+}
+
+.readout-meta {
+  color: var(--c-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   CONTACT SECTION - HIGH IMPACT & DIRECT ACTION
+   ========================================================================== */
+.contact-section-ind {
+  background-color: #08090b;
+  border-top: 2px solid var(--c-dark-border);
+  padding: 6rem 0;
+}
+
+.contact-layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.contact-direct-big {
+  margin: 2.5rem 0;
+}
+
+.contact-phone-giant {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: var(--c-yellow);
+  letter-spacing: -0.5px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.contact-phone-giant:hover {
+  color: #fff;
+}
+
+.contact-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.contact-spec-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.05rem;
+  color: var(--c-text-muted);
+}
+
+.contact-spec-row strong {
+  color: var(--c-text-white);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Industrial Form */
+.ind-form {
+  background-color: var(--c-dark-surface);
+  border: 1px solid var(--c-dark-border);
+  padding: 3rem;
+}
+
+.ind-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.ind-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--c-text-white);
+  margin-bottom: 0.5rem;
+}
+
+.ind-input {
+  width: 100%;
+  background-color: var(--c-dark-bg);
+  border: 2px solid var(--c-dark-border);
+  padding: 1rem 1.25rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.ind-input:focus {
+  border-color: var(--c-yellow);
+}
+
+textarea.ind-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer-ind {
+  background-color: #050608;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4rem 0 2rem;
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-bottom-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: var(--c-text-muted);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.96);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 2rem;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-container {
+  max-width: 960px;
+  width: 100%;
+  background: #111;
+  border: 2px solid var(--c-yellow);
+  position: relative;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--c-yellow);
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox-img-wrapper img {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+}
+
+.lightbox-details {
+  padding: 1.5rem 2rem;
+}
+
+.lightbox-details h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--c-yellow);
+}
+
+.lightbox-details p {
+  color: var(--c-text-muted);
+  margin-top: 0.35rem;
+}
+
+/* Toast */
+.toast-notice {
+  position: fixed;
+  bottom: 85px;
+  right: 25px;
+  background: var(--c-yellow);
+  color: var(--c-text-dark);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1.25rem 2rem;
+  z-index: 999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Floating Mobile Bar */
+.floating-mobile-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  border-top: 2px solid var(--c-yellow);
+  padding: 0.75rem 1rem;
+  z-index: 90;
+}
+
+.mobile-bar-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-row-item {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .tiktok-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calc-industrial-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-grid-ind {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-layout-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    background-color: #0c0d10;
+    flex-direction: column;
+    padding: 2.5rem;
+    gap: 2rem;
+    border-bottom: 2px solid var(--c-yellow);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+  }
+  
+  .main-nav.open {
+    transform: translateY(0);
+  }
+  
+  .nav-phone, .nav-actions .btn-ind {
+    display: none;
+  }
+  
+  .hero-metrics-strip {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .calc-segmented-control {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-grid-ind {
+    grid-template-columns: 1fr;
+  }
+  
+  .tiktok-industrial-panel {
+    padding: 2rem 1.5rem;
+  }
+  
+  .calc-industrial-box {
+    padding: 2rem 1.25rem;
+  }
+  
+  .floating-mobile-bar {
+    display: block;
+  }
+  
+  body {
+    padding-bottom: 70px;
+  }
+}
