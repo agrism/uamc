@@ -114,6 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const config = serviceRates[selectedService] || serviceRates.muresana;
     const currentArea = parseInt(areaSlider.value, 10);
+    if (areaSlider) {
+      areaSlider.setAttribute('aria-valuenow', currentArea);
+      areaSlider.setAttribute('aria-valuetext', `${currentArea} ${config.unit}`);
+    }
 
     if (areaValueDisplay) areaValueDisplay.textContent = `${currentArea} ${config.unit}`;
     

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uamc.kilograms.lv/sitemap.xml
