@@ -1,6 +1,5 @@
 /**
- * UAMC.LV - Būvniecības un Mūrēšanas Pakalpojumi
- * Dynamic Industrial Logic, Calculator & Lightbox
+ * UAMC.LV - MediaBoom Exact Style Interactive Script
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,17 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileToggle.setAttribute('aria-expanded', isExpanded);
     });
 
-    // Close mobile menu on link click
-    mainNav.querySelectorAll('.nav-link').forEach(link => {
+    mainNav.querySelectorAll('.nav-link, .mobile-cta-btn').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mainNav.contains(e.target) && !mobileToggle.contains(e.target) && mainNav.classList.contains('open')) {
+        mainNav.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
   // 2. Portfolio Category Filtering
-  const filterBtns = document.querySelectorAll('.filter-btn-ind');
-  const portfolioBlocks = document.querySelectorAll('.portfolio-block');
+  const filterBtns = document.querySelectorAll('.p-filter-btn');
+  const portfolioCards = document.querySelectorAll('.p-card');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -34,9 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filterValue = btn.getAttribute('data-filter');
 
-      portfolioBlocks.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        if (filterValue === 'all' || itemCategory === filterValue) {
+      portfolioCards.forEach(item => {
+        const itemCategory = item.getAttribute('data-category') || '';
+        const categories = itemCategory.split(/\s+/);
+        if (filterValue === 'all' || categories.includes(filterValue)) {
           item.style.display = 'block';
         } else {
           item.style.display = 'none';
@@ -45,18 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Lightbox Modal Functionality
+  // 3. Lightbox Modal
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxTitle = document.getElementById('lightboxTitle');
   const lightboxDesc = document.getElementById('lightboxDesc');
   const lightboxClose = document.getElementById('lightboxClose');
 
-  portfolioBlocks.forEach(item => {
+  portfolioCards.forEach(item => {
     item.addEventListener('click', () => {
       const img = item.querySelector('img');
-      const title = item.querySelector('.portfolio-title-text');
-      const loc = item.querySelector('.portfolio-loc-tag');
+      const title = item.querySelector('.p-card-title');
+      const loc = item.querySelector('.p-card-loc');
 
       if (lightboxModal && img && title) {
         lightboxImg.src = img.src;
@@ -83,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Interactive Industrial Tāmes Konfigurators
+  // 4. Luxury Tāmes Kalkulators
   const serviceInputs = document.querySelectorAll('input[name="calc_service"]');
   const areaSlider = document.getElementById('areaSlider');
   const areaValueDisplay = document.getElementById('areaValueDisplay');
@@ -92,9 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const calcApplyBtn = document.getElementById('calcApplyBtn');
 
   const serviceRates = {
-    muresana: { name: 'Mūrēšana (Bauroc / Ytong)', unit: 'm²', rate: 26, min: 30, max: 400, step: 5, defaultVal: 120 },
+    muresana: { name: 'Bauroc / Gāzbetona mūrēšana', unit: 'm²', rate: 26, min: 30, max: 400, step: 5, defaultVal: 120 },
     fasades: { name: 'Fasādes siltināšana & apdare', unit: 'm²', rate: 38, min: 40, max: 350, step: 5, defaultVal: 140 },
-    pamati: { name: 'Pamatu & plātnes betonēšana', unit: 'm²', rate: 55, min: 40, max: 250, step: 5, defaultVal: 90 }
+    pamati: { name: 'Pamatu & monolīta betonēšana', unit: 'm²', rate: 55, min: 40, max: 250, step: 5, defaultVal: 90 }
   };
 
   function updateCalculator() {
@@ -163,10 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initial update
   updateCalculator();
 
-  // 5. Contact Form Submission
+  // 5. Form Handling
   const leadForm = document.getElementById('leadContactForm');
   const toastNotice = document.getElementById('toastNotice');
 
@@ -180,7 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         submitBtn.textContent = '✓ PIETEIKUMS NOSŪTĪTS';
-        submitBtn.style.backgroundColor = '#10b981';
+        submitBtn.style.backgroundColor = '#141414';
+        submitBtn.style.color = '#e0bc75';
 
         if (toastNotice) {
           toastNotice.classList.add('show');
@@ -195,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
           submitBtn.style.backgroundColor = '';
+          submitBtn.style.color = '';
         }, 3000);
       }, 700);
     });
