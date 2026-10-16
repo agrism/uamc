@@ -19,10 +19,17 @@
   <meta property="og:description" content="Plaša spektra būvniecības nozares un pakalpojumi Latvijā. Bauroc, pamati, fasādes.">
   <meta property="og:image" content="assets/images/fb_404916684563751.webp">
 
-  <!-- Google Fonts: Poppins (Clean Agency Sans) & Source Serif 4 (MediaBoom Luxury Serif) -->
+  <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/images/fb_404916684563751.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Non-render-blocking Google Fonts (Poppins & Source Serif 4) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,300;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,300;1,8..60,400&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,300;1,8..60,400&display=swap">
+  </noscript>
 
   <link rel="stylesheet" href="styles.css">
 
@@ -51,7 +58,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrapper">
       <a href="#" class="brand-logo" aria-label="UAMC Sākumlapa">
-        <img src="assets/images/uamc_logo.webp" alt="UAMC Logo" class="brand-logo-img">
+        <img src="assets/images/uamc_logo.webp" alt="UAMC Logo" class="brand-logo-img" width="42" height="42" decoding="async">
         <div class="brand-logo-text">
           <span class="brand-title">UA<strong>MC</strong></span>
           <span class="brand-tagline">Būvniecība</span>
@@ -142,7 +149,7 @@
       <div class="industry-grid">
         <!-- Tile 1 -->
         <div class="industry-box" onclick="location.href='#kalkulators'">
-          <img src="assets/images/fb_404916684563751.webp" alt="Bauroc un gāzbetona privātmājas mūrēšana" class="bg-image" loading="lazy">
+          <img src="assets/images/fb_404916684563751.webp" alt="Bauroc un gāzbetona privātmājas mūrēšana" class="bg-image" width="800" height="600" fetchpriority="high" decoding="async">
           <div class="grid-overlay"></div>
           <div class="industry-info-box">
             <h2 class="industry-title">Bauroc & Gāzbetons</h2>
@@ -155,7 +162,7 @@
 
         <!-- Tile 2 -->
         <div class="industry-box" onclick="location.href='#kalkulators'">
-          <img src="assets/images/fb_107193547669401.webp" alt="Fasāžu siltināšana, armēšana un apdare" class="bg-image" loading="lazy">
+          <img src="assets/images/fb_107193547669401.webp" alt="Fasāžu siltināšana, armēšana un apdare" class="bg-image" width="960" height="720" loading="lazy" decoding="async">
           <div class="grid-overlay"></div>
           <div class="industry-info-box">
             <h2 class="industry-title">Fasāžu Siltināšana</h2>
@@ -168,7 +175,7 @@
 
         <!-- Tile 3 -->
         <div class="industry-box" onclick="location.href='#kalkulators'">
-          <img src="assets/images/fb_194217985633623.webp" alt="Monolīto pamatu plātnes un veidņu betonēšana" class="bg-image" loading="lazy">
+          <img src="assets/images/fb_194217985633623.webp" alt="Monolīto pamatu plātnes un veidņu betonēšana" class="bg-image" width="960" height="720" loading="lazy" decoding="async">
           <div class="grid-overlay"></div>
           <div class="industry-info-box">
             <h2 class="industry-title">Monolītie Pamati</h2>
@@ -181,7 +188,7 @@
 
         <!-- Tile 4 -->
         <div class="industry-box" onclick="location.href='#kalkulators'">
-          <img src="assets/images/fb_107156474339775.webp" alt="Privātmāju karkasa būvniecība un pārsedzes" class="bg-image" loading="lazy">
+          <img src="assets/images/fb_107156474339775.webp" alt="Privātmāju karkasa būvniecība un pārsedzes" class="bg-image" width="960" height="720" loading="lazy" decoding="async">
           <div class="grid-overlay"></div>
           <div class="industry-info-box">
             <h2 class="industry-title">Privātmāju Būvniecība</h2>
@@ -228,7 +235,7 @@
         </div>
 
         <div class="editorial-media-card">
-          <img src="assets/images/fb_354261209629299.webp" alt="UAMC koka kopņu un monolīto konstrukciju montāža" loading="lazy">
+          <img src="assets/images/fb_354261209629299.webp" alt="UAMC koka kopņu un monolīto konstrukciju montāža" width="720" height="960" loading="lazy" decoding="async">
           <div class="editorial-media-caption">
             <h4>Jumta koka kopnes & monolītās konstrukcijas</h4>
           </div>
@@ -261,7 +268,7 @@
         <div class="portfolio-grid-cards" id="portfolioGrid">
           <!-- Item 1: Aerial Ytong/Bauroc House -->
           <div class="p-card" data-category="muresana">
-            <img src="assets/images/fb_404916684563751.webp" alt="Bauroc un Ytong nesošo sienu un frontonu mūrēšana" loading="lazy">
+            <img src="assets/images/fb_404916684563751.webp" alt="Bauroc un Ytong nesošo sienu un frontonu mūrēšana" width="800" height="600" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Bauroc nesošās ārsienas un frontoni</h3>
@@ -270,7 +277,7 @@
 
           <!-- Item 2: Monolītie pamati sagatavošana -->
           <div class="p-card" data-category="pamati">
-            <img src="assets/images/fb_194217985633623.webp" alt="Monolīto pamatu plātnes un veidņu betonēšana" loading="lazy">
+            <img src="assets/images/fb_194217985633623.webp" alt="Monolīto pamatu plātnes un veidņu betonēšana" width="960" height="720" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Monolīto pamatu sagatavošana un veidņi</h3>
@@ -279,7 +286,7 @@
 
           <!-- Item 2b: Pabeigta monolītā pamatu plātne -->
           <div class="p-card" data-category="pamati">
-            <img src="assets/images/fb_1071662917997054.webp" alt="Pabeigta monolītā pamatu plātne ar inženierkomunikācijām" loading="lazy">
+            <img src="assets/images/fb_1071662917997054.webp" alt="Pabeigta monolītā pamatu plātne ar inženierkomunikācijām" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Monolītā pamatu plātne & inženierkomunikācijas</h3>
@@ -288,7 +295,7 @@
 
           <!-- Item 2c: Rādiusa un sarežģītu formu pamati -->
           <div class="p-card" data-category="pamati">
-            <img src="assets/images/fb_298524211869666.webp" alt="Rādiusa pamatu veidņi un armatūras karkass" loading="lazy">
+            <img src="assets/images/fb_298524211869666.webp" alt="Rādiusa pamatu veidņi un armatūras karkass" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Rādiusa pamatu stiegrojums un veidņi</h3>
@@ -297,7 +304,7 @@
 
           <!-- Item 2d: Pirms un Pēc - No plātnes līdz karkasam -->
           <div class="p-card" data-category="pamati muresana">
-            <img src="assets/images/fb_1127944852368860.webp" alt="No siltinātās pamatu plātnes līdz gatavam Bauroc karkasam" loading="lazy">
+            <img src="assets/images/fb_1127944852368860.webp" alt="No siltinātās pamatu plātnes līdz gatavam Bauroc karkasam" width="720" height="899" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Pirms & Pēc • Latvija</span>
               <h3 class="p-card-title">No pamatu plātnes līdz Bauroc karkasam</h3>
@@ -306,7 +313,7 @@
 
           <!-- Item 3: Ventilējamā fasāde -->
           <div class="p-card" data-category="fasades">
-            <img src="assets/images/fb_186307149758040.webp" alt="Ventilējamās fasādes siltināšana un apdare" loading="lazy">
+            <img src="assets/images/fb_186307149758040.webp" alt="Ventilējamās fasādes siltināšana un apdare" width="720" height="360" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Ventilējamā fasāde un koka apdare</h3>
@@ -315,7 +322,7 @@
 
           <!-- Item 4: Arhitektoniskā ķieģeļu fasāde -->
           <div class="p-card" data-category="fasades">
-            <img src="assets/images/fb_107259060996183.webp" alt="Arhitektoniskā ķieģeļu fasāde un panorāmas logi" loading="lazy">
+            <img src="assets/images/fb_107259060996183.webp" alt="Arhitektoniskā ķieģeļu fasāde un panorāmas logi" width="720" height="960" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Arhitektoniskā ķieģeļu fasāde un logu ailas</h3>
@@ -324,7 +331,7 @@
 
           <!-- Item 5: Fasādes siltināšana uz sastatnēm -->
           <div class="p-card" data-category="fasades">
-            <img src="assets/images/fb_107193547669401.webp" alt="Fasādes siltināšana un apmetums uz sastatnēm" loading="lazy">
+            <img src="assets/images/fb_107193547669401.webp" alt="Fasādes siltināšana un apmetums uz sastatnēm" width="960" height="720" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Fasādes siltināšana un apmetums uz sastatnēm</h3>
@@ -333,7 +340,7 @@
 
           <!-- Item 6: Daudzstāvu fasādes rekonstrukcija -->
           <div class="p-card" data-category="fasades">
-            <img src="assets/images/fb_107198977668858.webp" alt="Daudzstāvu ēkas fasādes renovācija" loading="lazy">
+            <img src="assets/images/fb_107198977668858.webp" alt="Daudzstāvu ēkas fasādes renovācija" width="720" height="960" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Pilna daudzstāvu fasādes renovācija</h3>
@@ -342,7 +349,7 @@
 
           <!-- Item 7: Jumta koka kopnes -->
           <div class="p-card" data-category="jumti gatavs">
-            <img src="assets/images/fb_354261209629299.webp" alt="Jumta koka kopņu montāža un segums" loading="lazy">
+            <img src="assets/images/fb_354261209629299.webp" alt="Jumta koka kopņu montāža un segums" width="720" height="960" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Jumta koka kopnes un seguma izbūve</h3>
@@ -351,7 +358,7 @@
 
           <!-- Item 8: Divstāvu karkass -->
           <div class="p-card" data-category="muresana">
-            <img src="assets/images/fb_107156474339775.webp" alt="Divstāvu privātmājas karkasa būvniecība" loading="lazy">
+            <img src="assets/images/fb_107156474339775.webp" alt="Divstāvu privātmājas karkasa būvniecība" width="960" height="720" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Divstāvu privātmājas karkasa mūrēšana</h3>
@@ -360,7 +367,7 @@
 
           <!-- Item 9: Pabeigta moderna māja -->
           <div class="p-card" data-category="gatavs">
-            <img src="assets/images/fb_107219787666777.webp" alt="Pabeigta moderna vienstāva privātmāja" loading="lazy">
+            <img src="assets/images/fb_107219787666777.webp" alt="Pabeigta moderna vienstāva privātmāja" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Pabeigta moderna vienstāva privātmāja</h3>
@@ -369,7 +376,7 @@
 
           <!-- Item 10: Iekšējās sienas & pārsedzes -->
           <div class="p-card" data-category="muresana">
-            <img src="assets/images/fb_107178394337583.webp" alt="Iekšējo starpsienu un pārsedžu precīzā mūrēšana" loading="lazy">
+            <img src="assets/images/fb_107178394337583.webp" alt="Iekšējo starpsienu un pārsedžu precīzā mūrēšana" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Iekšējās nesošās sienas un pārsedzes</h3>
@@ -378,7 +385,7 @@
 
           <!-- Item 11: Rindu māju klinkers -->
           <div class="p-card" data-category="muresana fasades">
-            <img src="assets/images/fb_107197317669024.webp" alt="Rindu māju klinkera ķieģeļu fasāžu mūrēšana" loading="lazy">
+            <img src="assets/images/fb_107197317669024.webp" alt="Rindu māju klinkera ķieģeļu fasāžu mūrēšana" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Klinkera ķieģeļu fasādes mūrēšana</h3>
@@ -387,7 +394,7 @@
 
           <!-- Item 12: Pabeigta koka dēļu fasāde -->
           <div class="p-card" data-category="fasades gatavs">
-            <img src="assets/images/fb_186306133091475.webp" alt="Pabeigta modernā koka dēļu ventilējamā fasāde" loading="lazy">
+            <img src="assets/images/fb_186306133091475.webp" alt="Pabeigta modernā koka dēļu ventilējamā fasāde" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Pabeigta modernā koka dēļu fasāde</h3>
@@ -396,7 +403,7 @@
 
           <!-- Item 13: Daudzdzīvokļu dzīvojamais nams -->
           <div class="p-card" data-category="gatavs fasades">
-            <img src="assets/images/fb_107187774336645.webp" alt="Daudzdzīvokļu ēku komplekss ar klinkera ķieģeļu apdari" loading="lazy">
+            <img src="assets/images/fb_107187774336645.webp" alt="Daudzdzīvokļu ēku komplekss ar klinkera ķieģeļu apdari" width="720" height="960" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Gatava Ēka • Latvija</span>
               <h3 class="p-card-title">Daudzstāvu klinkera dzīvojamais nams</h3>
@@ -405,7 +412,7 @@
 
           <!-- Item 14: Gatava daudzstāvu ēka ielas perspektīvā -->
           <div class="p-card" data-category="gatavs fasades">
-            <img src="assets/images/fb_107187674336655.webp" alt="Pabeigta daudzstāvu klinkera ķieģeļu ēka ielas perspektīvā" loading="lazy">
+            <img src="assets/images/fb_107187674336655.webp" alt="Pabeigta daudzstāvu klinkera ķieģeļu ēka ielas perspektīvā" width="720" height="965" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Gatava Ēka • Latvija</span>
               <h3 class="p-card-title">Pabeigta daudzstāvu ķieģeļu ēka</h3>
@@ -414,7 +421,7 @@
 
           <!-- Item 15: Ķieģeļu arhitektūra un ieejas mezgls -->
           <div class="p-card" data-category="gatavs fasades">
-            <img src="assets/images/fb_107187577669998.webp" alt="Arhitektoniskā ķieģeļu fasāde un ēkas ieejas portāls" loading="lazy">
+            <img src="assets/images/fb_107187577669998.webp" alt="Arhitektoniskā ķieģeļu fasāde un ēkas ieejas portāls" width="720" height="965" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Gatava Ēka • Latvija</span>
               <h3 class="p-card-title">Arhitektoniskā fasāde un ieejas portāls</h3>
@@ -423,7 +430,7 @@
 
           <!-- Item 16: Pabeigta ēka ar stiklotiem balkoniem -->
           <div class="p-card" data-category="gatavs fasades">
-            <img src="assets/images/fb_107187564336666.webp" alt="Pabeigta daudzstāvu dzīvojamā ēka ar stiklotiem balkoniem" loading="lazy">
+            <img src="assets/images/fb_107187564336666.webp" alt="Pabeigta daudzstāvu dzīvojamā ēka ar stiklotiem balkoniem" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Gatava Ēka • Latvija</span>
               <h3 class="p-card-title">Dzīvojamā ēka ar stiklotiem balkoniem</h3>
@@ -432,7 +439,7 @@
 
           <!-- Item 17: Krasta promenāde un daudzstāvu kvartāls -->
           <div class="p-card" data-category="gatavs fasades">
-            <img src="assets/images/fb_107187664336656.webp" alt="Krasta promenāde un daudzstāvu dzīvojamais kvartāls" loading="lazy">
+            <img src="assets/images/fb_107187664336656.webp" alt="Krasta promenāde un daudzstāvu dzīvojamais kvartāls" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Gatava Ēka • Latvija</span>
               <h3 class="p-card-title">Promenāde un daudzstāvu kvartāls</h3>
@@ -441,7 +448,7 @@
 
           <!-- Item 18: Bauroc privātmāja priežu ielokā -->
           <div class="p-card" data-category="muresana gatavs">
-            <img src="assets/images/fb_169063758149046.webp" alt="Bauroc gāzbetona privātmājas mūrēšana priežu ielokā" loading="lazy">
+            <img src="assets/images/fb_169063758149046.webp" alt="Bauroc gāzbetona privātmājas mūrēšana priežu ielokā" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Bauroc privātmāja priežu ielokā</h3>
@@ -450,7 +457,7 @@
 
           <!-- Item 19: Bauroc U-bloku monolītā josla un pārsedzes -->
           <div class="p-card" data-category="muresana pamati">
-            <img src="assets/images/fb_107220064333416.webp" alt="Bauroc U-veida bloku monolītā josla un pārsedzes" loading="lazy">
+            <img src="assets/images/fb_107220064333416.webp" alt="Bauroc U-veida bloku monolītā josla un pārsedzes" width="720" height="960" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Bauroc U-bloku monolītā josla</h3>
@@ -459,7 +466,7 @@
 
           <!-- Item 20: Starpsienu un logu ailu precīzā mūrēšana -->
           <div class="p-card" data-category="muresana">
-            <img src="assets/images/fb_107219611000128.webp" alt="Starpsienu un logu ailu precīzā mūrēšana ar Bauroc blokiem" loading="lazy">
+            <img src="assets/images/fb_107219611000128.webp" alt="Starpsienu un logu ailu precīzā mūrēšana ar Bauroc blokiem" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Starpsienu un ailu precīzā mūrēšana</h3>
@@ -468,7 +475,7 @@
 
           <!-- Item 21: Mūra darbi un fasāde no sastatnēm -->
           <div class="p-card" data-category="muresana fasades">
-            <img src="assets/images/fb_107208581001231.webp" alt="Ķieģeļu mūra fasādes darbi no sastatnēm" loading="lazy">
+            <img src="assets/images/fb_107208581001231.webp" alt="Ķieģeļu mūra fasādes darbi no sastatnēm" width="720" height="540" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Ķieģeļu mūra fasāde no sastatnēm</h3>
@@ -477,7 +484,7 @@
 
           <!-- Item 22: Spāru svētku vainags & jumta kopnes -->
           <div class="p-card" data-category="jumti">
-            <img src="assets/images/fb_322287006160053.webp" alt="Spāru svētku vainags virs uzmontētām jumta kopnēm" loading="lazy">
+            <img src="assets/images/fb_322287006160053.webp" alt="Spāru svētku vainags virs uzmontētām jumta kopnēm" width="720" height="1280" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Spāru svētku vainags & kopņu montāža</h3>
@@ -486,7 +493,7 @@
 
           <!-- Item 23: Jumta konstrukciju un griestu montāža -->
           <div class="p-card" data-category="jumti">
-            <img src="assets/images/fb_282757160113038.webp" alt="Jumta koka konstrukciju, griestu un siltinājuma montāža" loading="lazy">
+            <img src="assets/images/fb_282757160113038.webp" alt="Jumta koka konstrukciju, griestu un siltinājuma montāža" width="720" height="960" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Jumta konstrukcijas & griestu karkass</h3>
@@ -495,7 +502,7 @@
 
           <!-- Item 24: Daudzstāvu klinkera mūrēšana un balkoni -->
           <div class="p-card" data-category="muresana fasades">
-            <img src="assets/images/fb_107199261002163.webp" alt="Daudzstāvu ēkas klinkera ķieģeļu mūrēšana un balkonu montāža" loading="lazy">
+            <img src="assets/images/fb_107199261002163.webp" alt="Daudzstāvu ēkas klinkera ķieģeļu mūrēšana un balkonu montāža" width="720" height="960" loading="lazy" decoding="async">
             <div class="p-card-overlay">
               <span class="p-card-loc">Reāls Objekts • Latvija</span>
               <h3 class="p-card-title">Daudzstāvu klinkers un balkoni</h3>
@@ -718,7 +725,7 @@
     <div class="container">
       <div class="footer-4col-grid">
         <div>
-          <img src="assets/images/uamc_logo.webp" alt="UAMC Logo" style="height: 52px; width: auto; object-fit: contain; margin-bottom: 16px; background: #fff; padding: 4px; border-radius: 4px;">
+          <img src="assets/images/uamc_logo.webp" alt="UAMC Logo" width="52" height="52" loading="lazy" decoding="async" style="height: 52px; width: 52px; object-fit: contain; margin-bottom: 16px; background: #fff; padding: 4px; border-radius: 4px;">
           <p style="font-weight: 300; line-height: 26px;">
             UAMC (UA Masonry & Construction)<br>
             Rīga, Pierīga un visa Latvija<br>
@@ -787,6 +794,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
